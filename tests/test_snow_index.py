@@ -209,6 +209,7 @@ def test_calc_snow_index_to_snow_depth(sample_dataset):
     ds['snow_index'] = xr.ones_like(ds['vv'])
     ds = calc_snow_index_to_snow_depth(ds, C=0.5)
     np.testing.assert_array_equal(ds['snow_depth'], 0.5*np.ones((3,2,2)))
+    assert ds['snow_depth'].attrs['units'] == 'm'
 
 
 @pytest.fixture

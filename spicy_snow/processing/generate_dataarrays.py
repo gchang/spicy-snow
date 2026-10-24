@@ -388,6 +388,10 @@ def generate_forest_fraction_dataarray(aoi, ref = None) -> xr.Dataset:
     log.debug(f'FCF max: {fcf.max()}')
     log.debug(f'FCF mean: {fcf.mean()}')
 
+    # drop the source raster's attributes (GeoTIFF tags and units = '%'): they
+    # no longer apply to the 0-1 fraction, and xarray carries them on to
+    # deltaGamma, snow_index and snow_depth
+    fcf.attrs = {}
     fcf.name = 'fcf'
 
     return fcf

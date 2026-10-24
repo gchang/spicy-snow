@@ -270,5 +270,6 @@ def calc_snow_index_to_snow_depth(dataset: xr.Dataset, C: float = 0.44) -> Union
     """
     
     dataset['snow_depth'] = dataset['snow_index'] * C
+    dataset['snow_depth'].attrs = {'units': 'm', 'long_name': 'snow depth'}
 
     return dataset

@@ -71,7 +71,7 @@ spicy_ds = retrieve_snow_depth(aoi = test_aoi, dates = dates,
  - wet_snow: layer showing layers flagged as wet snow (1 = wet, 0 = dry)
  - snow_depth: derived snow depth in meters
  - snowcover: snow coverage binary mask (True = snow on, False = snow-free)
- - fcf: forest coverage percentage
+ - fcf: forest cover fraction (0 to 1)
  - vv: gamma0 sentinel-1 VV backscatter in dB
  - vh: gamma0 sentinel-1 VH backscatter in dB
 
