@@ -132,20 +132,20 @@ Sentinel-1 RTCs are downloaded from the Alaska Satellite Facility and processed 
 ## Citations
 
 Work using this repository should cite it and the following datasources
-NASA/JPL/OPERA. (2023). OPERA Co-registered Single Look Complex from Sentinel-1 validated product (Version 1) [Data set]. NASA Alaska Satellite Facility Distributed Active Archive Center. https://doi.org/10.5067/SNWG/OPERA_L2_CSLC-S1_V1 Date Accessed: 2025-11-18
+NASA/JPL/OPERA. (2023). OPERA Radiometric Terrain Corrected SAR Backscatter from Sentinel-1 validated product (Version 1) [Data set]. NASA Alaska Satellite Facility Distributed Active Archive Center. https://doi.org/10.5067/SNWG/OPERA_L2_RTC-S1_V1 Date Accessed: [date]
 
-Riggs, G. A., Hall, D. K. & Román, M. O. (2019). VIIRS/NPP Snow Cover Daily L3 Global 375m SIN Grid. (VNP10A1, Version 1). [Data Set]. Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active Archive Center. https://doi.org/10.5067/VIIRS/VNP10A1.001. [describe subset used if applicable]. Date Accessed 11-18-2025.
+Riggs, G. A. & Hall, D. K. (2023). VIIRS/JPSS1 CGF Snow Cover Daily L3 Global 375m SIN Grid. (VJ110A1F, Version 2). [Data Set]. Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active Archive Center. https://doi.org/10.5067/2YJ7GZPW2NNB. [describe subset used if applicable]. Date Accessed [date].
 
 U.S. Geological Survey (USGS), 2024, Annual NLCD Collection 1 Science Products (ver. 1.1, June 2025): U.S. Geological Survey data release, https://doi.org/10.5066/P94UXNTS.
 
 ## Links to relevant repos/sites
 
 Opera S1 RTC Products:
-https://www.earthdata.nasa.gov/data/catalog/asf-opera-l2-cslc-s1-v1-1
+https://www.earthdata.nasa.gov/data/catalog/asf-opera-l2-rtc-s1-v1-1
 https://asf.alaska.edu/datasets/daac/opera/
 
 VIIRS Snow Fractional Coverage
-https://nsidc.org/data/vnp10a1/versions/1
+https://nsidc.org/data/vj110a1f/versions/2
 
 Annual National Land Cover Database
 https://www.usgs.gov/centers/eros/science/annual-national-land-cover-database
