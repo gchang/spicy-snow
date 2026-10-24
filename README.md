@@ -23,6 +23,14 @@ Hoppinen et al 2024 - https://tc.copernicus.org/articles/18/5407/2024/
 pip install spicy-snow
 ```
 
+spicy-snow needs Python 3.9 to 3.11; on a newer Python, pip quietly installs an old release (0.3.1). To install from a clone with conda:
+
+```sh
+conda env create -f environment.yml
+conda activate spicy
+pip install .
+```
+
 ## Example usage:
 
 ```python
@@ -94,10 +102,10 @@ Don't forget to give the project a star! Thanks again!
 
 Run the following from the root directory of this project to get a coverage report.
 
-You will need to have the dependencies and `coverage` packages available.
+You will need to have the dependencies and the `pytest` and `coverage` packages available. The tests are written for pytest, so `unittest discover` finds none of them.
 
 ```bash
-python -m coverage run -m unittest discover -s ./tests
+python -m coverage run -m pytest tests
 python -m coverage report
 ```
 
