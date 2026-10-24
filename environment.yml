@@ -1,0 +1,20 @@
+name: spicy
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python>=3.9
+  - numpy
+  - pandas
+  - xarray
+  - rioxarray
+  - shapely
+  - asf_search
+  - matplotlib
+  - netcdf4
+  - rasterio
+  - pyproj
+  - earthaccess
+  - dask
+  - zarr
+  - h5py

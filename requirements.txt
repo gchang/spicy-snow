@@ -1,0 +1,11 @@
+numpy
+pandas
+xarray
+rioxarray
+shapely
+asf_search
+matplotlib
+h5py
+zarr
+pygeohydro
+earthaccess
