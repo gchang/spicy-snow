@@ -11,8 +11,6 @@ from tqdm.auto import tqdm
 import asf_search as asf
 from asf_search import download_url
 
-import sys
-sys.path.append('/Users/zmhoppinen/Documents/spicy-snow')
 from spicy_snow.utils.checks import validate_urls
 
 import logging

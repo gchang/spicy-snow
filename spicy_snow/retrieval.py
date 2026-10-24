@@ -10,11 +10,6 @@ import shapely.geometry
 from typing import Tuple, Union, List
 import logging
 
-# Add main repo to path
-import sys
-from os.path import expanduser
-sys.path.append(expanduser('../'))
-
 # import functions for downloading
 from spicy_snow.find_data import get_sentinel1_urls, find_snowcover_urls
 from spicy_snow.processing.generate_dataarrays import generate_sentinel1_dataarray,\

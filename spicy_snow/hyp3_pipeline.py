@@ -10,9 +10,6 @@ from hyp3_sdk.exceptions import AuthenticationError
 
 from typing import Union
 
-import sys
-from os.path import expanduser
-sys.path.append(expanduser('~/Documents/spicy-snow'))
 
 import logging
 log = logging.getLogger(__name__)
