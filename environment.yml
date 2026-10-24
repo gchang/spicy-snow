@@ -9,12 +9,16 @@ dependencies:
   - xarray
   - rioxarray
   - shapely
+  - geopandas
   - asf_search
+  - hyp3_sdk
   - matplotlib
   - netcdf4
   - rasterio
   - pyproj
   - earthaccess
+  - pygeohydro
   - dask
   - zarr
   - h5py
+  - tqdm

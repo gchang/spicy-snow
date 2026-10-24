@@ -27,7 +27,8 @@ REQUIRED = [
     'h5py',
     'pygeohydro',
     'zarr',
-    'dask'
+    'dask',
+    'tqdm'
 ]
 
 here = os.path.abspath(os.path.dirname(__file__))
