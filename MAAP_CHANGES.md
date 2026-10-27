@@ -32,6 +32,12 @@ This is a metadata correction only. Every value in the output is the same as bef
 
 How to install from a clone with conda, and which Python versions work. The coverage command now runs the tests with pytest: `unittest discover` collected none of them (0 tests), because they are pytest-style functions. The data citations and links now name the products the code downloads, OPERA RTC-S1 (not CSLC-S1) and VIIRS/JPSS1 VJ110A1F version 2 (not VNP10A1 version 1), with their DOIs from CMR.
 
+## 2026-10-27: an explicit conda lock for Linux
+
+`conda-linux-64.lock` is `environment.yml` solved on linux-64 and written out with `conda list --explicit --md5`: 350 conda-forge packages, each with its URL and MD5, so creating the environment needs no solver step. The solve had become slow and memory-hungry because nothing in `environment.yml` is pinned: on 2026-10-24 it took 116 s, and on 2026-10-27 it took 4 minutes on 4 cores and, in one run, 11 minutes and about 8.7 GB of memory. The README now creates the environment from the lock (`conda create -n spicy --file conda-linux-64.lock`), then runs `pip install .` as before. `environment.yml` stays the readable list of dependencies, with a comment at the top pointing to the lock, and is still the route for other platforms. To refresh the lock after changing `environment.yml`, solve it and run `conda list --explicit --md5 > conda-linux-64.lock` in the new environment. Results do not change.
+
+Checked on 2026-10-27 on Linux x86_64 from a fresh `git clone`: the environment from the lock installed in 31 s (Python 3.11.18, numpy 2.4.6, pandas 3.1.0, xarray 2026.9.0, rasterio 1.4.4 with GDAL 3.12.3); `pip install .` added only spicy-snow and `pip check` found no broken requirements; pytest gave 77 passed and 2 skipped. The Idaho example below took 40 s and gave the same snow depth percentiles (0, 0, 0, 0, 0.31, 1.41, 2.78, 3.84 and 7.91 m), with 685 of 537,682 pixel-times above 5 m, as before.
+
 ## Check
 
 On 2026-10-24, macOS on Apple silicon, from a fresh `git clone` of this repository:
@@ -53,4 +59,4 @@ retrieve_snow_depth(aoi=[-114.24, 43.65, -114.13, 43.75], dates=['2020-10-01', '
 
 It downloads 348 OPERA RTC-S1 files (116 bursts, 1.5 GB) and 73 VIIRS VJ110A1F tiles (about 380 MB) with Earthdata Login through `~/.netrc`, and took 173 s with 3.7 GB peak memory. The same call with upstream 0.4.5 in the same environment gave a NetCDF (85 x 93 pixels, 73 dates, 15 variables) whose every variable and coordinate is identical, value for value, to this copy's. Only the attributes differ, as described above. Snow depth percentiles (min, 1, 5, 25, 50, 75, 95, 99, max) are 0, 0, 0, 0, 0.31, 1.41, 2.78, 3.84 and 7.91 m in both.
 
-The package version comes from the `SPICY_SNOW_VERSION` environment variable at build time (upstream's release workflow sets it from the git tag); without it `setup.py` uses `0.0.0.dev0`. `spicy_snow.__version__` still says `0.3.0`. This copy is tagged `0.4.5.post1`; to install it with that version, run `SPICY_SNOW_VERSION=0.4.5.post1 pip install .`.
+The package version comes from the `SPICY_SNOW_VERSION` environment variable at build time (upstream's release workflow sets it from the git tag); without it `setup.py` uses `0.0.0.dev0`. `spicy_snow.__version__` still says `0.3.0`. This copy is tagged `0.4.5.post2` (`0.4.5.post1` before the lock file); to install it with that version, run `SPICY_SNOW_VERSION=0.4.5.post2 pip install .`.
