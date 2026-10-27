@@ -1,3 +1,6 @@
+# Readable list of dependencies. On Linux x86_64, conda-linux-64.lock is the same
+# environment solved to exact packages and installs without a solver step:
+#   conda create -n spicy --file conda-linux-64.lock
 name: spicy
 channels:
   - conda-forge
