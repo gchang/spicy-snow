@@ -23,13 +23,15 @@ Hoppinen et al 2024 - https://tc.copernicus.org/articles/18/5407/2024/
 pip install spicy-snow
 ```
 
-spicy-snow needs Python 3.9 to 3.11; on a newer Python, pip quietly installs an old release (0.3.1). To install from a clone with conda:
+spicy-snow needs Python 3.9 to 3.11; on a newer Python, pip quietly installs an old release (0.3.1). To install from a clone with conda on Linux x86_64, use the lock file, which lists the exact conda-forge packages and installs without a solver step:
 
 ```sh
-conda env create -f environment.yml
+conda create -n spicy --file conda-linux-64.lock
 conda activate spicy
 pip install .
 ```
+
+On other platforms, or to pick up newer packages, create the environment from `environment.yml` instead (`conda env create -f environment.yml`); conda then solves it, which can take several minutes.
 
 ## Example usage:
 
